@@ -3,11 +3,11 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 import { DataContext } from "../App";
 
 const YouthVocal = () => {
-  const cardData = useContext(DataContext);
+  const { cardData } = useContext(DataContext); // Fixed context extraction
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(2); // Default to 2 cards
 
-  // Adjust the number of visible cards based on screen size
+  // Adjust number of visible cards based on screen size
   useEffect(() => {
     const updateCardsPerSlide = () => {
       setCardsPerSlide(window.innerWidth < 640 ? 1 : 2);
@@ -18,7 +18,7 @@ const YouthVocal = () => {
     return () => window.removeEventListener("resize", updateCardsPerSlide);
   }, []);
 
-  if (!cardData || cardData.length === 0) {
+  if (!cardData || !Array.isArray(cardData) || cardData.length === 0) {
     return <p className="text-center text-gray-500">Loading user data...</p>;
   }
 
@@ -30,9 +30,7 @@ const YouthVocal = () => {
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex - cardsPerSlide >= 0
-        ? prevIndex - cardsPerSlide
-        : cardData.length - (cardData.length % cardsPerSlide || cardsPerSlide)
+      prevIndex === 0 ? cardData.length - cardsPerSlide : prevIndex - cardsPerSlide
     );
   };
 
@@ -54,7 +52,7 @@ const YouthVocal = () => {
         {/* Cards Container */}
         <div
           className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${currentIndex * (100 / cardsPerSlide)}%)` }}
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }} // Fixed movement
         >
           {cardData.map((user, index) => (
             <div key={user.id} className="w-full sm:w-1/2 p-3 flex-shrink-0">

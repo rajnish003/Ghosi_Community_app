@@ -26,7 +26,7 @@ const Navbar = () => {
       dropdown: [
         { name: "Education", link: "/careers/education" },
         { name: "Career", link: "/careers/career" },
-        { name: "ScholorShip", link: "/careers/scholorship" },
+        { name: "ScholarShip", link: "/careers/scholarship" },
       ],
     },
     { name: "News & Events", link: "/news" },
