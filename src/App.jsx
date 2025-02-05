@@ -3,14 +3,14 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Spinner from "./components/Spinner";
 import MainHeader from "./components/MainHeader";
-// import Aboutus from "./components/Aboutus";
 import PageNotFound from "./components/PageNotFound";
 import data from "./data";
+import Login from "./pages/Login";
 import BecomeaMember from "./pages/BecomeaMember";
 import Aboutus from "./components/Aboutus";
-import Aboutghosi from "./pages/Aboutghosi";
+import Aboutghosi from "./pages/Aboutghosi";  // Ensure case matches filename
 import Literature from "./pages/Literature";
-import VisionMissionObjectives from "./pages/VisionMissionObejctive";
+import VisionMissionObjective from "./pages/VisionMissionObjective";
 
 // Create context
 const DataContext = createContext();
@@ -19,9 +19,6 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
   const [cardData, setCardData] = useState(data); // Fixed initialization
-  
-
- 
 
   // Show Spinner on route change
   useEffect(() => {
@@ -37,18 +34,19 @@ const App = () => {
       <MainHeader />
 
       <div>
-        {/* Show Spinner */}
+        {/* Show Spinner Only When Loading */}
         {loading && <Spinner />}
 
         {/* Routes with Context Provider */}
-        <DataContext.Provider value={ cardData }>
+        <DataContext.Provider value={{ cardData, setCardData }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Aboutus" element={<Aboutus />} />
-            <Route path="/becomeaMemeber" element={<BecomeaMember />} />
-            <Route path="/aboutghosi" element={<Aboutghosi />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/becomeaMember" element={<BecomeaMember />} />
+            <Route path="/Aboutghosi" element={<Aboutghosi />} />
             <Route path="/literature" element={<Literature />} />
-            <Route path="/visionmissionobjective" element={<VisionMissionObjectives />} />
+            <Route path="/visionmissionobjective" element={<VisionMissionObjective />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </DataContext.Provider>
