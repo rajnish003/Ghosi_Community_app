@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="py-8 bg-gray-100">
+    <div className="py-8 bg-green-500">
       <div className="flex flex-col md:flex-row items-center justify-between px-6 max-w-7xl mx-auto space-y-4 md:space-y-0">
         
         {/* Left Section (Logo) */}
@@ -19,10 +19,10 @@ const Header = () => {
 
         {/* Title Section (Text) */}
         <div className="text-center md:text-left">
-          <span className="block text-2xl sm:text-3xl md:text-4xl font-semibold text-[#1769ed]">
+          <span className="block text-2xl sm:text-3xl md:text-4xl font-semibold text-[#ffff]">
             Welcome to Ghosi Community Website
           </span>
-          <span className="text-xl sm:text-2xl md:text-3xl text-[#1769ed]">
+          <span className="text-xl sm:text-2xl md:text-3xl text-[#ffff]">
             <p>گھوسی کمیونٹی کی ویب سائٹ پر خوش آمدید</p>
           </span>
         </div>
