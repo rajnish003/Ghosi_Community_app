@@ -2,6 +2,7 @@
   "name": "ghosi_community_app",
   "private": true,
   "version": "0.0.0",
+  "author": "Rajnish Kumar <raj003se@gmail.com>",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 
 const Hero_img = () => {
   const slides = [
-    { id: 1, src: "/image/image1.jpg" },
-    { id: 2, src: "/image/image2.jpg" },
-    { id: 3, src: "/image/image3.jpg" },
+    { id: 1, src: "/image/img1.jpg" },
+    { id: 2, src: "/image/img2(2).jpg" },
+    { id: 3, src: "/image/img5.jpg" },
   ];
 
   const [slideIndex, setSlideIndex] = useState(0);
