@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react'
 
-const AboutGhosi = () => {
+const Aboutghosi = () => {
   return (
-    <div className="bg-gray-200 min-h-screen">
+    <div>
+          <div className="bg-gray-200 min-h-screen">
       {/* Header Section */}
       <header className="bg-blue-900 text-white text-center py-3 shadow-lg">
         <h1 className="text-3xl font-bold">About Ghosi Community</h1>
@@ -85,7 +86,8 @@ const AboutGhosi = () => {
         </div>
       </div>
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default AboutGhosi;
+export default Aboutghosi
