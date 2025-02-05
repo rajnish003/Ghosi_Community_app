@@ -6,10 +6,9 @@ import MainHeader from "./components/MainHeader";
 // import Aboutus from "./components/Aboutus";
 import PageNotFound from "./components/PageNotFound";
 import data from "./data";
-import Login from "./pages/Login";
 import BecomeaMember from "./pages/BecomeaMember";
 import Aboutus from "./components/Aboutus";
-import AboutGhosi from "./pages/Aboutghosi";
+import Aboutghosi from "./pages/Aboutghosi";
 import Literature from "./pages/Literature";
 import VisionMissionObjectives from "./pages/VisionMissionObejctive";
 
@@ -46,9 +45,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Aboutus" element={<Aboutus />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/becomeaMemeber" element={<BecomeaMember />} />
-            <Route path="/AboutGhosi" element={<AboutGhosi />} />
+            <Route path="/aboutghosi" element={<Aboutghosi />} />
             <Route path="/literature" element={<Literature />} />
             <Route path="/visionmissionobjective" element={<VisionMissionObjectives />} />
             <Route path="*" element={<PageNotFound />} />
